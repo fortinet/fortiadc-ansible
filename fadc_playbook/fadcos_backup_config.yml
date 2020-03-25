@@ -1,0 +1,14 @@
+---
+- name:
+  hosts: all
+  vars:
+        ansible_network_os: fadcos
+        ansible_user: ansible
+  connection: httpapi
+  gather_facts: false
+  tasks:
+    - name: Backup config
+      fadcos_backup_config:
+        path: /temp/fortiadc/.
+        password: pwd
+

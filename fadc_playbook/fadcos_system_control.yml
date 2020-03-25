@@ -1,0 +1,13 @@
+---
+- name:
+  hosts: all
+  vars:
+        ansible_network_os: fadcos
+        ansible_user: ansible
+  connection: httpapi
+  gather_facts: false
+  tasks:
+    - name: system control
+      fadcos_system_control:
+              action: reboot
+
